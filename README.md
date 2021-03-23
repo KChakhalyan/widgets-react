@@ -1,4 +1,5 @@
-# 151 Text Inputs with Hooks
+# 156 Executing the Request from useEffect
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

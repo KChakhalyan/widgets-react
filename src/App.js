@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import Search from './components/Search';
-
+import React, { Component } from "react";
+import Search from "./components/Search";
 
 const App = () => {
-    return (
-        <div>
-            <Search />
-        </div>
-    )
-}
+  return (
+    <div className="ui container">
+      <Search />
+    </div>
+  );
+};
 export default App;
