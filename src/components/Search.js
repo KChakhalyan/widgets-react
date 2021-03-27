@@ -10,7 +10,6 @@ const Search = () => {
 		const timerId = setTimeout(() => {
 			setDebouncedTerm(term);
 		}, 1000);
-
 		return () => {
 			clearTimeout(timerId);
 		};

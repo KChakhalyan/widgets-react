@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Dropdown from './components/Dropdown';
+import Search from './components/Search';
 import Translate from './components/Translate';
-// import Search from './components/Search';
 
 const options = [
 	{
@@ -37,6 +37,11 @@ const App = () => {
 					</div>
 				</div>
 				<div className="ui vertical divider">or</div>
+			</div>
+			<div className="ui segment">
+				<div className="column">
+					<Search />
+				</div>
 			</div>
 		</div>
 	);
