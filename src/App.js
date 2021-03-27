@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Dropdown from './components/Dropdown';
 // import Search from './components/Search';
 
@@ -18,9 +18,14 @@ const options = [
 ];
 
 const App = () => {
+	const [selected, setSelected] = useState(options[0]);
 	return (
 		<div className="ui container">
-			<Dropdown options={options} />
+			<Dropdown
+				selected={selected}
+				onSelectedChange={setSelected}
+				options={options}
+			/>
 		</div>
 	);
 };
