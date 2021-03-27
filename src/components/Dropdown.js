@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-const Dropdown = ({ options, selected, onSelectedChange, label }) => {
+const Dropdown = ({ label, options, selected, onSelectedChange }) => {
 	const [open, setOpen] = useState(false);
 	const ref = useRef();
 
@@ -9,6 +9,7 @@ const Dropdown = ({ options, selected, onSelectedChange, label }) => {
 			if (ref.current && ref.current.contains(event.target)) {
 				return;
 			}
+
 			setOpen(false);
 		};
 
@@ -28,9 +29,7 @@ const Dropdown = ({ options, selected, onSelectedChange, label }) => {
 			<div
 				key={option.value}
 				className="item"
-				onClick={() => {
-					onSelectedChange(option);
-				}}
+				onClick={() => onSelectedChange(option)}
 			>
 				{option.label}
 			</div>
@@ -42,9 +41,7 @@ const Dropdown = ({ options, selected, onSelectedChange, label }) => {
 			<div className="field">
 				<label className="label">{label}</label>
 				<div
-					onClick={() => {
-						setOpen(!open);
-					}}
+					onClick={() => setOpen(!open)}
 					className={`ui selection dropdown ${open ? 'visible active' : ''}`}
 				>
 					<i className="dropdown icon"></i>
