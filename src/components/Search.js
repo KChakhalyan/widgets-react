@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Search = () => {
-	const [term, setTerm] = useState('Web Design'); // Set a default state
+	const [term, setTerm] = useState('Web'); // Set a default state
 	const [debouncedTerm, setDebouncedTerm] = useState(term);
 	const [results, setResults] = useState([]);
 
