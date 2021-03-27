@@ -28,11 +28,13 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
 					onClick={() => {
 						setOpen(!open);
 					}}
-					className="ui selection dropdown visible active"
+					className={`ui selection dropdown ${open ? 'visible active' : ''}`}
 				>
 					<i className="dropdown icon"></i>
 					<div className="text">{selected.label}</div>
-					<div className="menu visible transition">{renderedOptions}</div>
+					<div className={`menu ${open ? 'visible transition' : ''}`}>
+						{renderedOptions}
+					</div>
 				</div>
 			</div>
 		</div>
