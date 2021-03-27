@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Dropdown from './components/Dropdown';
+import Translate from './components/Translate';
 // import Search from './components/Search';
 
 const options = [
@@ -19,19 +20,24 @@ const options = [
 
 const App = () => {
 	const [selected, setSelected] = useState(options[0]);
-	const [showDropdown, setShowDropdown] = useState(true);
 	return (
 		<div className="ui container">
-			<button onClick={() => setShowDropdown(!showDropdown)}>
-				Toggle Dropdown
-			</button>
-			{showDropdown ? (
-				<Dropdown
-					selected={selected}
-					onSelectedChange={setSelected}
-					options={options}
-				/>
-			) : null}
+			<div className="ui segment">
+				<div className="ui two column very relaxed grid">
+					<div className="column">
+						<Dropdown
+							label="Select a color"
+							selected={selected}
+							onSelectedChange={setSelected}
+							options={options}
+						/>
+					</div>
+					<div className="column">
+						<Translate />
+					</div>
+				</div>
+				<div className="ui vertical divider">or</div>
+			</div>
 		</div>
 	);
 };
