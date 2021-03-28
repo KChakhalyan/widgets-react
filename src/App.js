@@ -23,15 +23,15 @@ const items = [
 
 const options = [
 	{
-		label: 'The Color Red',
+		label: 'The Red',
 		value: 'red',
 	},
 	{
-		label: 'The Color Green',
+		label: 'The Green',
 		value: 'green',
 	},
 	{
-		label: 'A Shade of Blue',
+		label: 'The Blue',
 		value: 'blue',
 	},
 ];
@@ -55,6 +55,19 @@ const App = () => {
 					selected={selected}
 					onSelectedChange={setSelected}
 				/>
+				<div
+					className={`ui message ${
+						selected.value === 'red'
+							? 'red'
+							: selected.value === 'green'
+							? 'green'
+							: selected.value === 'blue'
+							? 'blue'
+							: ''
+					}`}
+				>
+					<h1>{selected.label}</h1>
+				</div>
 			</Route>
 			<Route path="/translate">
 				<Translate />
